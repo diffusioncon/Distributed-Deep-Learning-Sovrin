@@ -12,7 +12,8 @@ ADD bin ./bin
 ADD README.md ./
 ADD scripts ./scripts
 ADD setup.py ./
-ADD model/untrained_model.pt ./model/untrained_model.pt
+RUN mdir model
+COPY model/untrained_model.pt ./model/untrained_model.pt
 
 RUN pip3 install --no-cache-dir -e .
 

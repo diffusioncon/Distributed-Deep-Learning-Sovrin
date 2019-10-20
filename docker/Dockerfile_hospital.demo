@@ -16,8 +16,10 @@ ADD bin ./bin
 ADD README.md ./
 ADD scripts ./scripts
 ADD setup.py ./
-ADD data/"$hospital_name".csv ./data/"$hospital_name".csv
-ADD data/hospital_learn.py ./data/hospital_learn.py
+RUN mkdir data
+COPY data/"$hospital_name".csv ./data/"$hospital_name".csv
+COPY data/hospital_learn.py ./data/hospital_learn.py
+RUN mkdir model
 
 
 RUN pip3 install --no-cache-dir -e .
